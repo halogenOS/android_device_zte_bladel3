@@ -111,6 +111,8 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 
 # Offline charging
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # EGL settings
 BOARD_EGL_CFG := device/mediatek/mt6582/configs/egl.cfg
