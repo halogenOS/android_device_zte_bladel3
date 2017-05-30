@@ -75,6 +75,7 @@ service ipod /system/bin/ipod
     user root
     group root
     class ipo
+    disabled
 
 # mount different fs end
 
