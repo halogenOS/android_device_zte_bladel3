@@ -1,6 +1,8 @@
 # inherit from the proprietary version
 -include vendor/mediatek/mt6582/BoardConfigVendor.mk
 
+LOCAL_PATH := device/mediatek/mt6582
+
 # Platform
 TARGET_BOARD_PLATFORM := mt6582
 TARGET_NO_BOOTLOADER := true
@@ -37,8 +39,8 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 134217728
 BOARD_CACHEIMAGE_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/mediatek/mt6582/kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/mediatek/mt6582/bootimg.mk
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/bootimg.mk
 BOARD_MKBOOTIMG_ARGS := --board 1336460062
 BOARD_CUSTOM_BOOTIMG := true
 
@@ -69,7 +71,7 @@ TARGET_CPU_MEMCPY_OPT_DISABLE := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/mt6582/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # WIFI
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -83,16 +85,16 @@ WIFI_DRIVER_FW_PATH_AP:=AP
 WIFI_DRIVER_FW_PATH_P2P:=P2P
 
 # GPS
-TARGET_SPECIFIC_HEADER_PATH := vendor/mediatek/mt6582/include
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/mediatek/mt6582/ril/
+BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril/
 
 BOARD_CONNECTIVITY_VENDOR := MediaTek
 BOARD_CONNECTIVITY_MODULE := conn_soc
 
 # CWM
-TARGET_RECOVERY_FSTAB := device/mediatek/mt6582/rootdir/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # TWRP
@@ -111,11 +113,12 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 
 # Offline charging
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
-BOARD_CHARGER_ENABLE_SUSPEND := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # EGL settings
-BOARD_EGL_CFG := device/mediatek/mt6582/configs/egl.cfg
+BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 BOARD_EGL_NEEDS_HANDLE_VALUE := true
@@ -123,7 +126,7 @@ BOARD_EGL_NEEDS_FNW := true
 TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 
 # Selinux
-BOARD_SEPOLICY_DIRS += device/mediatek/mt6582/sepolicy
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
