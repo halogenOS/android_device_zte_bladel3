@@ -15,10 +15,6 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := cortex-a7
 
-# Enable dex-preoptimization
-WITH_DEXPREOPT := false
-DONT_DEXPREOPT_PREBUILTS := true
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := mt6582
 
@@ -112,7 +108,6 @@ TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 
 # Offline charging
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true

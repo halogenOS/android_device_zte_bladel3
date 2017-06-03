@@ -56,9 +56,7 @@ PRODUCT_COPY_FILES += \
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.mt6582:root/fstab.mt6582 \
-    $(LOCAL_PATH)/rootdir/init.recovery.mt6582.rc:root/init.recovery.mt6582.rc \
     $(LOCAL_PATH)/rootdir/init.mt6582.rc:root/init.mt6582.rc \
-    $(LOCAL_PATH)/rootdir/init.mt6582_common.rc:root/init.mt6582_common.rc \
     $(LOCAL_PATH)/rootdir/init.modem.rc:root/init.modem.rc \
     $(LOCAL_PATH)/rootdir/ueventd.mt6582.rc:root/ueventd.mt6582.rc \
     $(LOCAL_PATH)/rootdir/init.mt6582.usb.rc:root/init.mt6582.usb.rc \
