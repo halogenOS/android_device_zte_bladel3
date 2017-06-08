@@ -36,7 +36,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/bootimg.mk
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x80000000 --ramdisk_offset 0x84000000 --tags_offset 0x00000100 --second-offset 0x80f00000
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x80000000 --ramdisk_offset 0x84000000 --tags_offset 0x00000100 --second_offset 0x80f00000
 BOARD_CUSTOM_BOOTIMG := true
 
 TARGET_KMODULES := true
