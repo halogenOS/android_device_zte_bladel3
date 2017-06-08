@@ -1,7 +1,7 @@
 # inherit from the proprietary version
--include vendor/mediatek/mt6582/BoardConfigVendor.mk
+-include vendor/zte/bladel3/BoardConfigVendor.mk
 
-LOCAL_PATH := device/mediatek/mt6582
+LOCAL_PATH := device/zte/bladel3
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6582
@@ -18,7 +18,7 @@ TARGET_CPU_VARIANT := cortex-a7
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := mt6582
 
-TARGET_USERIMAGES_USE_EXT4:=true
+TARGET_USERIMAGES_USE_EXT4 :=true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
 # Kernel 
@@ -43,7 +43,7 @@ BOARD_CUSTOM_BOOTIMG := true
 TARGET_KMODULES := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := mt6582
+TARGET_OTA_ASSERT_DEVICE := mt6582,bladel3,aeon6582_wt_nj_l,P182A20
 
 # MTK HARDWARE
 BOARD_HAS_MTK_HARDWARE := true

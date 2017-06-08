@@ -1,11 +1,6 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product-if-exists, vendor/zte/bladel3/vendor.mk)
 
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
-
-$(call inherit-product-if-exists, vendor/mediatek/mt6582/vendor.mk)
-
-LOCAL_PATH := device/mediatek/mt6582
+LOCAL_PATH := device/zte/bladel3
 
 PRODUCT_CHARACTERISTICS := default
 
@@ -16,8 +11,6 @@ ifeq ($(TARGET_PREBUILT_KERNEL),)
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
-
-PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PACKAGES += \
     libxlog
@@ -38,6 +31,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
     $(LOCAL_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/gps/etc/gps.conf:/system/etc/gps.conf
     
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -123,7 +119,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    SnapdragonCamera Snap
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
@@ -145,9 +141,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
 	persist.service.adb.enable=1 \
 	persist.service.debuggable=1 \
 	persist.mtk.wcn.combo.chipid=-1
-
-PRODUCT_NAME := full_mt6582
-PRODUCT_DEVICE := mt6582
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 854

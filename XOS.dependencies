@@ -1,0 +1,7 @@
+[
+  {
+    "repository": "android_vendor_zte_bladel3",
+    "target_path": "vendor/zte/bladel3",
+    "branch": "XOS-7.1"
+  }
+]
