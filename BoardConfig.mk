@@ -23,7 +23,6 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
 # Kernel 
 BOARD_KERNEL_CMDLINE :=
-BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 
 # make_ext4fs requires numbers in dec format
@@ -37,7 +36,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/bootimg.mk
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00000000 --ramdisk_offset 0x04000000 --tags_offset 0x00000100
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x80000000 --ramdisk_offset 0x84000000 --tags_offset 0x00000100 --second-offset 0x80f00000
 BOARD_CUSTOM_BOOTIMG := true
 
 TARGET_KMODULES := true
