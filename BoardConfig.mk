@@ -127,8 +127,5 @@ BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
 
-# Use old sepolicy version
-POLICYVERS := 26
-
 # Hack for build
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
