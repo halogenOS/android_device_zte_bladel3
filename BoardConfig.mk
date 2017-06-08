@@ -24,6 +24,7 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 # Kernel 
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
+BOARD_RAMDISK_BASE := 0x84000000
 BOARD_KERNEL_PAGESIZE := 2048
 
 # make_ext4fs requires numbers in dec format
@@ -37,7 +38,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/bootimg.mk
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x84000000 --board 809634354
+BOARD_MKBOOTIMG_ARGS := --board 809634354 --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100
 BOARD_CUSTOM_BOOTIMG := true
 
 TARGET_KMODULES := true
