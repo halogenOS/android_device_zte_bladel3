@@ -1,4 +1,4 @@
-$(call inherit-product-if-exists, vendor/zte/bladel3/vendor.mk)
+$(call inherit-product-if-exists, vendor/zte/bladel3/bladel3-vendor.mk)
 
 LOCAL_PATH := device/zte/bladel3
 
